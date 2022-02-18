@@ -1,18 +1,15 @@
-# (2) Basic Version and Branch Management (Git)
+# (3) Introduction Mobile App Development
 
-# RESUME MATERI : 15/02/2022
+# RESUME MATERI : 16/02/2022
 
-## Basic Version and Branch Management (Git)
+## Introduction Mobile App Development
 
 Tuliskan 3 poin yang dipelajari dari materi tersebut. Resume / ringkasan materi dapat disubmit melalui Github.
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-A. Version control dengan melakukan versioning atau mengatur versi dari source code program memudahkan kita dalam melakukan proses development.
+- Software atau perangkat lunak tersimpan dan dapat dikendalikan pada sistem komputer dan terbentuk dari perintah-perintah serta tidak memiliki bentuk fisik.
 
-B. Git merupakan salah satu control system yang populer dan digunakan oleh para developer saat ini dalam mengembangkan software secara tim (bersama-sama).
+- Macam-macam Software diantaranya yaitu web, desktop, dan mobile
 
-C. Worflow collaboration yang baik itu seperti berikut :
-1. Buat branch master dari branch development
-2. Hindari edit langsung ke branch development
-3. Merge branch feature hanya ke branch development
-4. Merge branch development ke branch master (saat dirasa branch development sudah fix tanpa bug)
+- Compiler merupakan software yang dapat mengubah kode menjadi file ynag dapat dijalankan, prosesnya lebih panjang, dan program dapat dijalankan dengan cepat karena tidak membaca ulang kode.
+
