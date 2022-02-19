@@ -11,7 +11,7 @@ int factorial(int n) {
 }
 
 void main() {
-  var n = 4;
+  var n = 5;
 
   print(factorial(n));
 }
