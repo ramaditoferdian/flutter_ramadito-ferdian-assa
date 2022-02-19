@@ -1,0 +1,14 @@
+Task
+
+Letakkan solusi dari persoalan berikut dalam masing-masing fungsi!
+
+1. Terdapat sebuah nilai:
+  a. jika nilai > 70: return A
+  b. jika nilai > 40: return B
+  C. jika nilai > O: return C
+  d. selain itu return teks kosong
+
+2. Tampilkan nilai faktorial dari:
+  а. 10
+  b. 20
+  С. ЗО
