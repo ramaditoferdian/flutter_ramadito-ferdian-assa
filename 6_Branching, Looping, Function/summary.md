@@ -1,4 +1,4 @@
-# (3) Branching, Looping, Function
+# (6) Branching, Looping, Function
 
 # RESUME MATERI : 19/02/2022
 
