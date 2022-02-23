@@ -14,3 +14,5 @@ Tuliskan 3 poin yang dipelajari dari materi tersebut. Resume / ringkasan materi 
 - Null safety dimiliki oleh dart dimana dart memberi keamanan dari data bernilai null.
 
 ## Pada section 4 ini diberi task berupa 2 soal, soal 1 diminta untuk membuat perhitungan untuk luas lingkaran dan soal 2 diminta untuk menyambungkan 3 buah variable berisi string.
+
+![](https://raw.githubusercontent.com/ramaditoferdian/flutter_ramadito-ferdian-assa/main/4_Introduction%20to%20Algorithm%20and%20Dart%20Programming/screenshots/source%20code%20%2B%20output.png?token=GHSAT0AAAAAABQUCWEU5YNYKDGP6COG4CSCYQWBLEQ)
