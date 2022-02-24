@@ -1,8 +1,8 @@
-# (7) Advance Function - Async-Await
+# (8) Collection
 
-# RESUME MATERI : 20/02/2022
+# RESUME MATERI : 21/02/2022
 
-## Advance Function - Async-Await
+## Collection
 
 ### Tuliskan 3 poin yang dipelajari dari materi tersebut. Resume / ringkasan materi dapat disubmit melalui Github.
 
