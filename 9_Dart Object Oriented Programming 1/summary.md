@@ -22,6 +22,8 @@
 
 ### Pada praktikum kali ini diberikan 2 soal sebagai berikut
 
-![image](/screenshots/soal.png)
+![image](/9_Dart%20Object%20Oriented%20Programming%201/screenshots/jawaban1.png)
 
- 
+![image](/9_Dart%20Object%20Oriented%20Programming%201/screenshots/jawaban2.png)
+
+![image](/9_Dart%20Object%20Oriented%20Programming%201/screenshots/running_program.png)
