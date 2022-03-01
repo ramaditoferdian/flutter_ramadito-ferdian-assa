@@ -28,4 +28,9 @@
 ### Pada praktikum kali ini diberikan 2 soal sebagai berikut
 ![image](https://user-images.githubusercontent.com/36509167/155484558-8e71a564-42f3-437c-ba77-d0bd6f4536ef.png)
 
+#### No 1
+![no1](/7_Advance%20Function%20-%20Async-Await/screenshots/no1.png)
+
+#### No 2
+![no2](/7_Advance%20Function%20-%20Async-Await/screenshots/no2.png)
  
