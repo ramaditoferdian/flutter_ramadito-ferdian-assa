@@ -20,8 +20,8 @@
 
 3. Method merupakan sifat dari suatu class, aktivitas yang dapat dikerjakan oleh suatu class, dan memiliki sifat seperti fungsi.
 
-### Pada praktikum kali ini diberikan 1 soal sebagai berikut
-![image](https://user-images.githubusercontent.com/36509167/155489197-f4bb54de-a652-4344-9bc1-24286fcdd3b9.png)
+### Pada praktikum kali ini diberikan 2 soal sebagai berikut
 
+![image](/screenshots/soal.png)
 
  
