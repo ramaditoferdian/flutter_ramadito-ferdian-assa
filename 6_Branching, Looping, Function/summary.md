@@ -13,7 +13,11 @@ Tuliskan 3 poin yang dipelajari dari materi tersebut. Resume / ringkasan materi 
 
 - Perulangan yaitu menjalankan proses berulang kali. Perulangan pada dart terdiri dari For, while, do-while.
 
+---
 ### Pada praktikum kali ini diberikan 2 soal sebagai berikut mengenai `percabangan` dan `perulangan` dengan membuat `function`.
 
-![image](https://user-images.githubusercontent.com/36509167/155486894-45d2593b-419e-457d-b982-91d0baa6bec0.png)
-
+![soal](/6_Branching,%20Looping,%20Function/screenshots/soal.png)
+#### No 1
+![no1](/6_Branching,%20Looping,%20Function/screenshots/no1.png)
+#### No 2
+![no2](/6_Branching,%20Looping,%20Function/screenshots/no2.png)
