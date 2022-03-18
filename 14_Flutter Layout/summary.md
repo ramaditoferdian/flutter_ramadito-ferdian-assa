@@ -22,7 +22,7 @@
      - Membungkus widget lain
      - Dapat diatur lebar dan tingginya
      - Lebih sederhana dari container
-   - 
+
 
 
 3. Multi-child layout
