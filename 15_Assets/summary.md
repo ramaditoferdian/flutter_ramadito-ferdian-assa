@@ -22,7 +22,7 @@
   
 
 
-### Pada praktikum kali ini diberikan 2 soal sebagai berikut
+### Pada praktikum kali ini diberikan soal sebagai berikut
 
 ![Soal](/15_Assets/screenshots/soal.png)
 
