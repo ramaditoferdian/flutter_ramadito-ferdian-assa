@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/home-page',
+        initialRoute: '/',
         routes: {
           '/': (context) => Task1(),
           '/home-page': (context) => HomePage(),
