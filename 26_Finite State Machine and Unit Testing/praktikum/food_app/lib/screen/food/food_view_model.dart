@@ -32,9 +32,7 @@ class FoodViewModel with ChangeNotifier {
     changeState(FoodViewState.loading);
 
     try {
-      List<FoodModel> foods = await FoodAPI.getFoodFromAPI();
-
-      // final f = await FoodAPI.getFoodFromAPI();
+      List<FoodModel> foods = await FoodAPI().getFoodFromAPI();
 
       _foods = foods;
 

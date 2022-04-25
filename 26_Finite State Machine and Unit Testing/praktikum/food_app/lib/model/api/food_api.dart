@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:food_app/model/food_model.dart';
 
 class FoodAPI {
-  static Future<List<FoodModel>> getFoodFromAPI() async {
+  Future<List<FoodModel>> getFoodFromAPI() async {
     var baseUrl =
         'https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/foods';
 
