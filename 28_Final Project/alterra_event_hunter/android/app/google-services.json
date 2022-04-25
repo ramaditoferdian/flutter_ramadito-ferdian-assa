@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "221154559704",
+    "project_id": "alterra-event-hunter",
+    "storage_bucket": "alterra-event-hunter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221154559704:android:393d7e67d73dc04d2139ad",
+        "android_client_info": {
+          "package_name": "com.ramaditoferdian.alterra_event_hunter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221154559704-kt7jd8vnpcipbd8gkdkagu5ne749vglo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARkXckKnYUrGGGYJDQwkIZ2Y2vGu6xIC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221154559704-kt7jd8vnpcipbd8gkdkagu5ne749vglo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
