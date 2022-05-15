@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alterra_event_hunter">
    <application
-        android:label="alterra_event_hunter"
+        android:label="Alterra Event Hunter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
