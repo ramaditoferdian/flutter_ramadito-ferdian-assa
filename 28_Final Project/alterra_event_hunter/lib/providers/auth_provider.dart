@@ -9,7 +9,25 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+enum AuthState {
+  none,
+  loading,
+  error,
+}
+
 class AuthProvider with ChangeNotifier {
+  // note : Start Code Auth State
+
+  AuthState _authState = AuthState.none;
+  AuthState get authState => _authState;
+
+  changeState(AuthState authState) {
+    _authState = authState;
+    notifyListeners();
+  }
+
+  // note : End Code Auth State
+
   late UserModel _user;
 
   UserModel get user => _user;
@@ -26,6 +44,7 @@ class AuthProvider with ChangeNotifier {
     required String role,
     required int phoneNumber,
   }) async {
+    changeState(AuthState.loading);
     try {
       UserModel user = await AuthService().signUp(
         email: email,
@@ -48,9 +67,51 @@ class AuthProvider with ChangeNotifier {
 
       // note : End
 
+      changeState(AuthState.none);
+
       return true;
     } catch (e) {
       print(e.toString() + " { disini errornya }");
+
+      changeState(AuthState.error);
+
+      throw e;
+
+      return false;
+    }
+  }
+
+  Future<bool> updateProfile({
+    required String fullName,
+    required int phoneNumber,
+  }) async {
+    changeState(AuthState.loading);
+    try {
+      UserModel user = await AuthService().updateUser(
+        fullName: fullName,
+        phoneNumber: phoneNumber,
+      );
+
+      _user = user;
+
+      // note : SharedPref
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      String userSaved = json.encode(_user.toJson());
+      prefs.setString('userSaved', userSaved);
+
+      _user = UserModel.fromJson(json.decode(userSaved));
+
+      // note : End
+
+      changeState(AuthState.none);
+
+      return true;
+    } catch (e) {
+      print(e.toString() + " { disini errornya }");
+
+      changeState(AuthState.error);
 
       throw e;
 
@@ -62,6 +123,7 @@ class AuthProvider with ChangeNotifier {
     required String email,
     required String password,
   }) async {
+    changeState(AuthState.loading);
     try {
       UserModel user = await AuthService().signIn(
         email: email,
@@ -81,9 +143,13 @@ class AuthProvider with ChangeNotifier {
 
       // note : End
 
+      changeState(AuthState.none);
+
       return true;
     } catch (e) {
       print(e.toString() + " { disini errornya }");
+
+      changeState(AuthState.error);
 
       throw e;
 

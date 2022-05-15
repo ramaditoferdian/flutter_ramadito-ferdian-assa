@@ -4,8 +4,10 @@ import 'package:alterra_event_hunter/models/user_model.dart';
 import 'package:alterra_event_hunter/providers/auth_provider.dart';
 import 'package:alterra_event_hunter/providers/page_provider.dart';
 import 'package:alterra_event_hunter/shared/theme.dart';
+import 'package:alterra_event_hunter/ui/pages/edit_profile_page.dart';
 
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -167,26 +169,41 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               GestureDetector(
                 onTap: () {
-                  // Navigator.pushNamed(context, '/edit-profile');
                   print('edit profile');
+
+                  // Navigator.pushNamed(context, '/edit-profile-page');
+
+                  Navigator.of(context).push(
+                    PageTransition(
+                      child: EditProfilePage(),
+                      type: PageTransitionType.rightToLeft,
+                    ),
+                  );
                 },
                 child: menuItem(Icons.edit, "Edit Profile"),
               ),
-              menuItem(Icons.list_alt, "Your Orders"),
-              menuItem(Icons.help, "Help"),
+              // menuItem(Icons.list_alt, "Your Orders"),
+              GestureDetector(
+                onTap: () {
+                  print('help');
+
+                  // Navigator.pushNamed(context, '/edit-profile-page');
+                },
+                child: menuItem(Icons.help, "Help"),
+              ),
               SizedBox(
                 height: 30,
               ),
-              Text(
-                'General',
-                style: secondaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: bold,
-                ),
-              ),
-              menuItem(Icons.privacy_tip, "Privacy & Policy"),
-              menuItem(Icons.my_library_books_outlined, "Term of Service"),
-              menuItem(Icons.star, "Rate App"),
+              // Text(
+              //   'General',
+              //   style: secondaryTextStyle.copyWith(
+              //     fontSize: 16,
+              //     fontWeight: bold,
+              //   ),
+              // ),
+              // menuItem(Icons.privacy_tip, "Privacy & Policy"),
+              // menuItem(Icons.my_library_books_outlined, "Term of Service"),
+              // menuItem(Icons.star, "Rate App"),
             ],
           ),
         ),

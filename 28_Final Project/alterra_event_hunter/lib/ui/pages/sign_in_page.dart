@@ -28,6 +28,8 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    // bool isLoading = AuthProvider().authState == AuthState.loading;
+    // bool isLoading = false;
     handleSignIn() async {
       setState(() {
         isLoading = true;
@@ -282,6 +284,7 @@ class _SignInPageState extends State<SignInPage> {
             if (formKey.currentState!.validate()) {
               handleSignIn();
             }
+            FocusManager.instance.primaryFocus?.unfocus();
           },
           style: TextButton.styleFrom(
             backgroundColor: primaryColor,
@@ -335,52 +338,57 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       backgroundColor: backgroundColor1,
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              logoTitle(),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: defaultMargin * 2),
-                padding: EdgeInsets.all(defaultMargin),
-                decoration: BoxDecoration(
-                  color: whiteColor,
-                  borderRadius: BorderRadius.circular(
-                    45,
-                  ),
-                  border: Border.all(
-                    color: greyColor,
-                    width: 1.5,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 3,
-                      offset: Offset(0, 2), // changes position of shadow
-                      //first paramerter of offset is left-right
-                      //second parameter is top to down
+      body: GestureDetector(
+        onTap: () {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: SafeArea(
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                logoTitle(),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: defaultMargin * 2),
+                  padding: EdgeInsets.all(defaultMargin),
+                  decoration: BoxDecoration(
+                    color: whiteColor,
+                    borderRadius: BorderRadius.circular(
+                      45,
                     ),
-                  ],
-                ),
-                child: Form(
-                  key: formKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      title(),
-                      emailInput(),
-                      passwordInput(),
-                      forgotPassword(),
-                      isLoading ? LoadingButton() : logInButton(),
-                      footer(),
+                    border: Border.all(
+                      color: greyColor,
+                      width: 1.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 3,
+                        offset: Offset(0, 2), // changes position of shadow
+                        //first paramerter of offset is left-right
+                        //second parameter is top to down
+                      ),
                     ],
                   ),
+                  child: Form(
+                    key: formKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        title(),
+                        emailInput(),
+                        passwordInput(),
+                        forgotPassword(),
+                        isLoading ? LoadingButton() : logInButton(),
+                        footer(),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

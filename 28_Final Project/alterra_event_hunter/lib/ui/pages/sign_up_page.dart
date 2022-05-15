@@ -24,7 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController verfifyPasswordController =
       TextEditingController(text: '');
 
-  String? roleUserGroupValue = '';
+  String? roleUserGroupValue = 'Customer';
 
   bool isLoading = false;
 
@@ -605,55 +605,66 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       backgroundColor: backgroundColor1,
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              logoTitle(),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: defaultMargin * 2),
-                padding: EdgeInsets.all(defaultMargin),
-                decoration: BoxDecoration(
-                  color: whiteColor,
-                  borderRadius: BorderRadius.circular(
-                    45,
-                  ),
-                  border: Border.all(
-                    color: greyColor,
-                    width: 1.5,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 3,
-                      offset: Offset(0, 2), // changes position of shadow
-                      //first paramerter of offset is left-right
-                      //second parameter is top to down
+      body: GestureDetector(
+        onTap: () {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: SafeArea(
+          child: SingleChildScrollView(
+            reverse: true,
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                logoTitle(),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: defaultMargin * 2),
+                  // padding: EdgeInsets.all(defaultMargin),
+                  padding: EdgeInsets.only(
+                      top: defaultMargin,
+                      left: defaultMargin,
+                      right: defaultMargin,
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
+                  decoration: BoxDecoration(
+                    color: whiteColor,
+                    borderRadius: BorderRadius.circular(
+                      45,
                     ),
-                  ],
-                ),
-                child: Form(
-                  key: formKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      title(),
-                      selectRole(),
-                      emailInput(),
-                      fullNameInput(),
-                      phoneNumberInput(),
-                      passwordInput(),
-                      verifyPasswordInput(),
-                      isLoading ? LoadingButton() : signUpButton(),
-                      footer(),
+                    border: Border.all(
+                      color: greyColor,
+                      width: 1.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 3,
+                        offset: Offset(0, 2), // changes position of shadow
+                        //first paramerter of offset is left-right
+                        //second parameter is top to down
+                      ),
                     ],
                   ),
+                  child: Form(
+                    key: formKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        title(),
+                        // selectRole(),
+                        emailInput(),
+                        fullNameInput(),
+                        phoneNumberInput(),
+                        passwordInput(),
+                        verifyPasswordInput(),
+                        isLoading ? LoadingButton() : signUpButton(),
+                        footer(),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

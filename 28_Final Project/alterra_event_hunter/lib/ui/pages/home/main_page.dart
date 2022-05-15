@@ -78,6 +78,39 @@ class _MainPageState extends State<MainPage> {
               ),
               label: '',
             ),
+            // BottomNavigationBarItem(
+            //   icon: Column(
+            //     children: [
+            //       Container(
+            //         padding: EdgeInsets.all(12),
+            //         decoration: BoxDecoration(
+            //           shape: BoxShape.circle,
+            //           color: pageProvider.currentIndex == 1
+            //               ? whiteColor
+            //               : transparentColor,
+            //         ),
+            //         child: Image.asset(
+            //           'assets/img/icon_page_tickets.png',
+            //           width: 25,
+            //           color: pageProvider.currentIndex == 1
+            //               ? primaryColor
+            //               : whiteColor,
+            //         ),
+            //       ),
+            //       SizedBox(
+            //         height: 5,
+            //       ),
+            //       Text(
+            //         'Ticket\'s',
+            //         style: whiteTextStyle.copyWith(
+            //           fontWeight:
+            //               pageProvider.currentIndex == 1 ? semiBold : medium,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            //   label: '',
+            // ),
             BottomNavigationBarItem(
               icon: Column(
                 children: [
@@ -86,46 +119,13 @@ class _MainPageState extends State<MainPage> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: pageProvider.currentIndex == 1
-                          ? whiteColor
-                          : transparentColor,
-                    ),
-                    child: Image.asset(
-                      'assets/img/icon_page_tickets.png',
-                      width: 25,
-                      color: pageProvider.currentIndex == 1
-                          ? primaryColor
-                          : whiteColor,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'Ticket\'s',
-                    style: whiteTextStyle.copyWith(
-                      fontWeight:
-                          pageProvider.currentIndex == 1 ? semiBold : medium,
-                    ),
-                  ),
-                ],
-              ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: pageProvider.currentIndex == 2
                           ? whiteColor
                           : transparentColor,
                     ),
                     child: Image.asset(
                       'assets/img/icon_page_profile.png',
                       width: 25,
-                      color: pageProvider.currentIndex == 2
+                      color: pageProvider.currentIndex == 1
                           ? primaryColor
                           : whiteColor,
                     ),
@@ -137,7 +137,7 @@ class _MainPageState extends State<MainPage> {
                     'Profile',
                     style: whiteTextStyle.copyWith(
                       fontWeight:
-                          pageProvider.currentIndex == 2 ? semiBold : medium,
+                          pageProvider.currentIndex == 1 ? semiBold : medium,
                     ),
                   ),
                 ],
@@ -155,11 +155,11 @@ class _MainPageState extends State<MainPage> {
           return HomePage();
           break;
 
-        case 1:
-          return MyTicketPage();
-          break;
+        // case 1:
+        //   return MyTicketPage();
+        //   break;
 
-        case 2:
+        case 1:
           return ProfilePage();
           break;
 

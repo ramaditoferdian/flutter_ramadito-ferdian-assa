@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:alterra_event_hunter/models/user_model.dart';
 import 'package:alterra_event_hunter/services/user_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -65,6 +68,36 @@ class AuthService {
   Future<void> signOut() async {
     try {
       await _firebaseAuth.signOut();
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<UserModel> updateUser({
+    required String fullName,
+    required int phoneNumber,
+  }) async {
+    try {
+      final currentUser = FirebaseAuth.instance.currentUser;
+      print(currentUser);
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      var user = prefs.getString('userSaved');
+
+      var getUser = UserModel.fromJson(json.decode(user!));
+
+      UserModel userUpdated = UserModel(
+        uid: getUser.uid,
+        email: getUser.email,
+        fullName: fullName,
+        role: getUser.role,
+        phoneNumber: phoneNumber,
+      );
+
+      // note : melakukan set user (menyimpan data user pada firestore)
+      await UserService().setUser(userUpdated);
+
+      return userUpdated;
     } catch (e) {
       throw e;
     }

@@ -205,7 +205,7 @@ class _DetailEventPageState extends State<DetailEventPage> {
           ),
           Expanded(
             child: Text(
-              '20 Mei 2022 - 19 Agustus 2022',
+              '${widget.eventModel.dateStart} - ${widget.eventModel.dateEnd}',
               style: secondaryTextStyle.copyWith(
                 fontSize: 15,
                 fontWeight: medium,
@@ -232,7 +232,7 @@ class _DetailEventPageState extends State<DetailEventPage> {
           ),
           Expanded(
             child: Text(
-              '09:00 - 15:00',
+              '${widget.eventModel.timeStart} - ${widget.eventModel.timeEnd}',
               style: secondaryTextStyle.copyWith(
                 fontSize: 15,
                 fontWeight: medium,

@@ -23,6 +23,7 @@ Color blackColor = const Color(0xff2E2E2E);
 Color whiteColor = const Color(0xffFFFFFF);
 Color greyColor = const Color(0xffF0F0F0);
 Color primeColor = const Color(0xff9F1D21);
+Color disabledColor = const Color(0xffC6C6C6);
 
 // FONTS
 

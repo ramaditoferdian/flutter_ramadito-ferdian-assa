@@ -4,11 +4,13 @@ import 'package:alterra_event_hunter/providers/auth_provider.dart';
 import 'package:alterra_event_hunter/providers/event_provider.dart';
 import 'package:alterra_event_hunter/shared/theme.dart';
 import 'package:alterra_event_hunter/ui/pages/detail_event_page.dart';
+import 'package:alterra_event_hunter/ui/pages/explore_event_page.dart';
 import 'package:alterra_event_hunter/ui/pages/loading/home_page_shimmer.dart';
 import 'package:alterra_event_hunter/ui/widgets/destination_card_carousel.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -155,7 +157,13 @@ class _HomePageState extends State<HomePage> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/explore-location');
+                // Navigator.pushNamed(context, '/explore-location');
+                Navigator.of(context).push(
+                  PageTransition(
+                    child: ExploreEventPage(),
+                    type: PageTransitionType.rightToLeft,
+                  ),
+                );
               },
               child: Icon(
                 Icons.chevron_right,
@@ -363,12 +371,11 @@ class _HomePageState extends State<HomePage> {
                     price: event.price,
                     onTap: () {
                       print(event.name);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DetailEventPage(eventModel: event);
-                          },
+
+                      Navigator.of(context).push(
+                        PageTransition(
+                          child: DetailEventPage(eventModel: event),
+                          type: PageTransitionType.rightToLeft,
                         ),
                       );
                     },

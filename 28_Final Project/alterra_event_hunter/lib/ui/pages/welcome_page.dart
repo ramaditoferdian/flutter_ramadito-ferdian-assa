@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:alterra_event_hunter/shared/theme.dart';
+import 'package:alterra_event_hunter/ui/pages/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:page_transition/page_transition.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -23,6 +25,14 @@ class WelcomePage extends StatelessWidget {
           GestureDetector(
             onTap: () {
               print('Next');
+              // Navigator.pushNamedAndRemoveUntil(
+              //     context, '/sign-in', (route) => false);
+              Navigator.of(context).push(
+                PageTransition(
+                  child: SignInPage(),
+                  type: PageTransitionType.rightToLeft,
+                ),
+              );
             },
             child: Container(
               margin: EdgeInsets.only(top: 50, right: defaultMargin),
@@ -79,10 +89,6 @@ class WelcomePage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
-        // child: Image.asset(
-        //   'assets/ilustrasi/welcome_page_ilus.png',
-        //   width: double.infinity,
-        // ),
         margin: EdgeInsets.only(bottom: 150),
         child: Lottie.asset(
           'assets/ilustrasi/welcome_page_lottie.json',

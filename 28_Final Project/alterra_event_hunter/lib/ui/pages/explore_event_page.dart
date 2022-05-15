@@ -6,6 +6,7 @@ import 'package:alterra_event_hunter/ui/pages/detail_event_page.dart';
 import 'package:alterra_event_hunter/ui/pages/preview_event_page.dart';
 import 'package:alterra_event_hunter/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 class ExploreEventPage extends StatefulWidget {
@@ -85,12 +86,18 @@ class _ExploreEventPageState extends State<ExploreEventPage> {
                         onTap: () {
                           print(event.name);
 
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return DetailEventPage(eventModel: event);
-                              },
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) {
+                          //       return DetailEventPage(eventModel: event);
+                          //     },
+                          //   ),
+                          // );
+                          Navigator.of(context).push(
+                            PageTransition(
+                              child: DetailEventPage(eventModel: event),
+                              type: PageTransitionType.rightToLeft,
                             ),
                           );
                         },

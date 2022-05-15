@@ -6,12 +6,14 @@ import 'package:alterra_event_hunter/models/user_model.dart';
 import 'package:alterra_event_hunter/providers/auth_provider.dart';
 import 'package:alterra_event_hunter/providers/event_provider.dart';
 import 'package:alterra_event_hunter/providers/page_provider.dart';
+import 'package:alterra_event_hunter/ui/pages/edit_profile_page.dart';
 import 'package:alterra_event_hunter/ui/pages/explore_event_page.dart';
 import 'package:alterra_event_hunter/ui/pages/home/main_page.dart';
 import 'package:alterra_event_hunter/ui/pages/home/profile_page.dart';
 import 'package:alterra_event_hunter/ui/pages/sign_in_page.dart';
 import 'package:alterra_event_hunter/ui/pages/sign_up_page.dart';
 import 'package:alterra_event_hunter/ui/pages/splash_screen.dart';
+import 'package:alterra_event_hunter/ui/pages/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,11 +32,14 @@ void main() async {
   }
 
   runApp(MyApp(
-    // initialRoute: user == null ? '/sign-in' : '/home',
-    initialRoute: user == null
-        ? '/sign-in'
-        : (userNow.role == 'Customer' ? '/home' : '/profile-page'),
-  ));
+      // initialRoute: user == null ? '/sign-in' : '/home',
+
+      // note : untuk tampilkan halaman sesuai ROLE
+      initialRoute: user == null ? '/' : '/home'
+
+      // note : untuk cek apakah user sudah login atau belum
+      // initialRoute: user == null ? '/sign-in' : '/welcome-page',
+      ));
 }
 
 class MyApp extends StatelessWidget {
@@ -60,12 +65,14 @@ class MyApp extends StatelessWidget {
         // initialRoute: '/sign-in',
         initialRoute: initialRoute,
         routes: {
-          // '/': (context) => SplashPage(),
+          '/': (context) => SplashPage(),
+          '/welcome-page': (context) => WelcomePage(),
           '/sign-in': (context) => SignInPage(),
           '/sign-up': (context) => SignUpPage(),
           '/home': (context) => MainPage(),
           '/explore-location': (context) => ExploreEventPage(),
           '/profile-page': (context) => ProfilePage(),
+          '/edit-profile-page': (context) => EditProfilePage(),
         },
       ),
     );
